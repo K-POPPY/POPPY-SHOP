@@ -34,8 +34,8 @@ const MainPage = () => {
             <div id="product-list">
                 {products.map((product,idx)=>{
                     return(
-                        <div className="product-card" /* key={idx} */>
-                            <div><img className="product-img" src={product.imgURL} alt={product.name} /></div>
+                        <div className="product-card" key={idx}>
+                            <div><img className="product-img" src={product.imgUrl} alt={product.name} /></div>
                             <div className="product-contents">
                                 <span className="product-name">{product.name}</span>
                                 <span className="product-price">{product.price}</span>
