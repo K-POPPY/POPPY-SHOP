@@ -19,8 +19,6 @@ const MainPage = () => {
         });
     },[])
 
-
-
     return (
     <div>
         <div id="header">
@@ -34,17 +32,21 @@ const MainPage = () => {
             </div>
             <h1>Products</h1>
             <div id="product-list">
-                <div className="product-card">
-                    <div><img className="product-img" src="images/products/food1.jpg" alt="" /></div>
-                    <div className="product-contents">
-                        <span className="product-name">습식사료</span>
-                        <span className="product-price">5000원</span>
-                        <div className="product-seller">
-                            <img src="images/icons/avatar.png" alt="" className="product-avatar" />
-                                <span>내츄럴 코어</span>
+                {products.map((product,idx)=>{
+                    return(
+                        <div className="product-card" /* key={idx} */>
+                            <div><img className="product-img" src={product.imgURL} alt={product.name} /></div>
+                            <div className="product-contents">
+                                <span className="product-name">{product.name}</span>
+                                <span className="product-price">{product.price}</span>
+                                <div className="product-seller">
+                                    <img src="images/icons/avatar.png" alt="" className="product-avatar" />
+                                    <span>{product.seller}</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    )
+                })}
             </div>
         </div>
         <div id="footer">
