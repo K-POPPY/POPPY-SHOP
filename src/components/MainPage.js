@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import './Mainpage.css';
 import axios from "axios";
 
@@ -33,14 +34,19 @@ const MainPage = () => {
             <h1>Products</h1>
             <div id="product-list">
                 {products.map((product,idx)=>{
+                    // console.log(product, idx);
                     return(
                         <div className="product-card" key={idx}>
-                            <div><img className="product-img" src={product.imgUrl} alt={product.name} /></div>
+                            <Link className="product-link" to={`/ProductPage/${idx}}`}>
+                                <div>
+                                    <img className="product-img" src={product.imgUrl} alt={product.name} />
+                                </div>
+                            </Link>
                             <div className="product-contents">
                                 <span className="product-name">{product.name}</span>
                                 <span className="product-price">{product.price}</span>
                                 <div className="product-seller">
-                                    <img src="images/icons/avatar.png" alt="" className="product-avatar" />
+                                    <img src="images/icons/avatar.png" alt={product.seller} className="product-avatar" />
                                     <span>{product.seller}</span>
                                 </div>
                             </div>
