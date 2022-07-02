@@ -22,7 +22,7 @@ const ProductPage = ()=>{
     }
 
     return(
-    <div>
+    <div id="body">
         <button onClick={()=>navigate(-1)} style={css}>Back</button>
         <div id='image-box'>
             <img src={`/${product.imgUrl}`} alt={product.name} />

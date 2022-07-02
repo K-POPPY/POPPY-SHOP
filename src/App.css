@@ -8,7 +8,7 @@
 #body{
     height:100%;
     width:1024px;
-    margin:0 auto;
+    margin:15px auto;
 }
 #body > h1{
     margin-top:16px;
@@ -21,7 +21,7 @@
     justify-content: center;
     align-items: center;
     /* 상품이 길어지면 상품이 footer밑에 깔리니 상품이 길어지면 포지션 지우기 */
-    position:fixed;
+    /* position:fixed; */
     bottom: 0;
     right: 0%;
     left: 0%;
@@ -41,9 +41,10 @@
     width:1024px;
     height:100%;
     display:flex;
-    align-items:center
+    align-items:center;
+    justify-content: space-between;
 }
-#header-area>img{
+#header-area img{
     width:128px;
 }
 #product-list{

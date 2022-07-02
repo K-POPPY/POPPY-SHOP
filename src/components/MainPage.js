@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import './Mainpage.css';
 import axios from "axios";
 
-
 const MainPage = () => {
     let [products,setProducts]=useState([]);
     const url="https://d3534315-5e37-442a-853a-10fe524e3451.mock.pstmn.io/products";

@@ -1,15 +1,23 @@
-import { Route, Routes } from 'react-router-dom'
+import { Link, Route, Routes, useNavigate } from 'react-router-dom'
 import MainPage from './components/MainPage'
 import ProductPage from './components/ProductPage';
 import UploadPage from './components/UploadPage';
 import './App.css'
+// 이미지 업로드 미리보기 구현할수있는 프론트엔드 리액트 라이브러리
+import 'antd/dist/antd.css';
+import { CloudUploadOutlined } from '@ant-design/icons';
+import { Button } from 'antd';
+
 
 function App() {
+  let navigate=useNavigate();
+
   return (
     <div className="App">
       <div id="header">
           <div id="header-area">
-              <img src="images/icons/logo.png" alt="배너" />
+            <Link to="/"><img src="images/icons/logo.png" alt="로고" /></Link>
+            <Button size="large" shape="round"  icon={<CloudUploadOutlined />} onClick={()=>navigate('/UploadPage')}>업로드</Button>
           </div>
       </div>         
       <Routes>
