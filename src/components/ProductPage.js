@@ -11,8 +11,10 @@ const ProductPage = ()=>{
     
     /* 컴포넌트가 업데이트 될때 한번만 실행 (무한루프X) */
     useEffect(()=>{
-        axios.get(`https://d3534315-5e37-442a-853a-10fe524e3451.mock.pstmn.io/products/${id}`)
-        .then((result)=>{setProcuct(result.data);})
+        axios.get(`http://localhost:8080/products/${id}`)
+        .then((result)=>{
+            console.log(result);
+            setProcuct(result.data.product);})
         .catch((error)=>{console.error(error);})
     },[])
 
@@ -25,7 +27,7 @@ const ProductPage = ()=>{
     <div id="body">
         <button onClick={()=>navigate(-1)} style={css}>Back</button>
         <div id='image-box'>
-            <img src={`/${product.imgUrl}`} alt={product.name} />
+            <img src={`/${product.imageUrl}`} alt={product.name} />
         </div>
         <div id='profile-box'>
             <img src="/images/icons/avatar.png" alt={product.seller} className="product-avatar" />

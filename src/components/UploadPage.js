@@ -34,7 +34,7 @@ const UploadPage = ()=>{
                     </Form.Item>
                     <Divider />
                     <Form.Item label={<div className="upload-label">판매가</div>} name="price" rules={[{required:true, message:"판매가를 입력해주세요."}]}>
-                        <InputNumber className="upload-price" size="large" InitialValue={0} />
+                        <InputNumber className="upload-price" size="large" min={0} defaultValue={0} />
                     </Form.Item>
                     <Divider />
                     <Form.Item label={<div className="upload-label">상품설명</div>} name="description" rules={[{required:true, message:"상품설명을 입력해주세요."}]}>

@@ -4,7 +4,7 @@ import ProductPage from './components/ProductPage';
 import UploadPage from './components/UploadPage';
 import './App.css'
 // 이미지 업로드 미리보기 구현할수있는 프론트엔드 리액트 라이브러리
-import 'antd/dist/antd.css';
+import "antd/dist/antd.min.css";
 import { CloudUploadOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 
