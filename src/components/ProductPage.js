@@ -2,6 +2,8 @@ import { useNavigate, useParams } from "react-router-dom"
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./ProductPage.css"
+import dayjs from 'dayjs'; // 상품등록일 동적으로 수정
+import {API_URL} from '../config/Constans.js';
 
 const ProductPage = ()=>{
     const {id} = useParams();
@@ -27,7 +29,7 @@ const ProductPage = ()=>{
     <div id="body">
         <button onClick={()=>navigate(-1)} style={css}>Back</button>
         <div id='image-box'>
-            <img src={`/${product.imageUrl}`} alt={product.name} />
+            <img src={`${API_URL}/${product.imageUrl}`} alt={product.name} />
         </div>
         <div id='profile-box'>
             <img src="/images/icons/avatar.png" alt={product.seller} className="product-avatar" />
@@ -36,8 +38,8 @@ const ProductPage = ()=>{
         <div id='contents-box'>
             <div id='name'>{product.name}</div>
             <div id='price'>{product.price}원</div>
-            <div id='createAt'>2022-06-26</div>
-            <div id='description'>{product.discription} </div>
+            <div id='createAt'>{dayjs(product.createdAt).format('YYYY년 MM월 DD일')}</div>
+            <pre id='description'>{product.description} </pre>
         </div>
     </div>
     )
