@@ -13,7 +13,7 @@ const ProductPage = ()=>{
     
     /* 컴포넌트가 업데이트 될때 한번만 실행 (무한루프X) */
     useEffect(()=>{
-        axios.get(`http://localhost:8080/products/${id}`)
+        axios.get(`${API_URL}/${id}`)
         .then((result)=>{
             console.log(result);
             setProcuct(result.data.product);})

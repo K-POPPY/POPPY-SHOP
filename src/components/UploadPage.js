@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./UploadPage.css"
+import {API_URL} from '../config/Constans.js';
 import axios from "axios";
 import { Form, Divider, Input, InputNumber, Button, Upload, message } from "antd";
 const { TextArea } = Input;
@@ -12,7 +13,7 @@ const UploadPage = () => {
     const [imageUrl, setImageUrl] = useState(null);
 
     const onSubmit = (values) => {
-        axios.post(`http://localhost:8080/products`, {
+        axios.post(`${API_URL}/products`, {
             name: values.name,
             description: values.description,
             seller: values.seller,
@@ -45,9 +46,9 @@ const UploadPage = () => {
             <div id="load-container">
                 <Form name="uploadForm" onFinish={onSubmit}>
                     <Form.Item name="upload" label={<div className="uplod-lable">상품사진</div>}>
-                        <Upload name="image" action="http://localhost:8080/image" listType="picture" showUploadList={false} onChange={onChageImg}>
+                        <Upload name="image" action={`${API_URL}/image`} listType="picture" showUploadList={false} onChange={onChageImg}>
                             {imageUrl ? (
-                                <img id="upload-img" src={`http://localhost:8080/${imageUrl}`} />
+                                <img id="upload-img" src={`${API_URL}/${imageUrl}`} />
                             ) : (
                                 <div id="upload-img-placeholder">
                                     <img src="/images/icons/camera.png" />

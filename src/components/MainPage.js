@@ -56,7 +56,7 @@ const MainPage = () => {
 				</Carousel>
 				<h1>Products</h1>
 				<div id="product-list">
-					{products.map((product, idx) => {
+					{products.map((product, idx) => {	
 						// console.log(product, idx);
 						return (
 							<div className="product-card" key={idx}>
